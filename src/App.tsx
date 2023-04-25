@@ -5,8 +5,11 @@ function App() {
 
     return (
         <div className="App">
-
-
+            <div>
+                <p>
+                    Я Люблю Милу
+                </p>
+            </div>
         </div>
     );
 }
