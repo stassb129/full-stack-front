@@ -1,19 +1,27 @@
-import React, {FC} from 'react';
+import React, {FC, useState} from 'react';
 import {ClientType} from "../../store/types";
 
 type ClientPageProps = {
     clients: ClientType[]
 }
 const ClientsPage: FC<ClientPageProps> = (props) => {
-    return (<div>
+    const [clientsState, setClientsState] = useState<ClientType[]>(props.clients)
+        return (
             <div>
 
-            </div>
-            <hr/>
-            <div></div>
-        </div>
+                {clientsState.map((e) => <div>
+                    <div>{e.name}</div>
+                    <div>{e.age}</div>
+                    <div>{e.surname}</div>
+                    <hr/>
+                </div>)}
 
-    );
-};
+
+            </div>
+
+
+        );
+    }
+;
 
 export default ClientsPage;
